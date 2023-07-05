@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import Library from "./pages/Library";
 import DetailPage from "./pages/DetailPage";
 import AddPage from "./pages/addBook";
-import UpdatePage from "./pages/UpdatePage";
+import UpdatePage from "./pages/UppPage";
 
 
 const router = createBrowserRouter([
