@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <AddPage/>,
   },
   {
-    path: "//library/update/:id",
+    path: "/library/update/:id",
     element: <UpdatePage/>
   },
   {
