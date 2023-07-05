@@ -5,23 +5,23 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function UpdatePage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [book, setBook] = useState({
     judul: "",
     genre: "",
     penulis: "",
   });
-  const {id} = useParams()
+  const { id } = useParams();
   useEffect(() => {
     findData(id, (data) => {
       // console.log(data)
       if (data.payload.length > 0) {
-        setBook(data.payload[0])
+        setBook(data.payload[0]);
       }
     });
   }, [id]);
 
-  // 
+  //
   function updateHandler(event) {
     event.preventDefault();
     const data = {
@@ -31,21 +31,20 @@ function UpdatePage() {
       penulis: event.target.penulis.value,
     };
     putData(data, (calb) => {
-        if(calb.payload.isSuccess){
-            alert("data berhasil diubah")
-            navigate(`/library/detail/${id}`)
-        }else{
-            alert("data gagal diubah")
-        }
-        // console.log(calb)
+      if (calb.payload.isSuccess) {
+        alert("data berhasil diubah");
+        navigate(`/library/detail/${id}`);
+      } else {
+        alert("data gagal diubah");
+      }
+      // console.log(calb)
     });
   }
 
   return (
     <div>
       <h1>ubah</h1>
-      <form action="" onSubmit={(e)=>updateHandler(e)}>
-        {/* <input type="hidden" name="id" defaultValue={id} /> */}
+      <form action="" onSubmit={(e) => updateHandler(e)}>
         <label htmlFor="judul" className="block">
           judul
         </label>
@@ -54,7 +53,6 @@ function UpdatePage() {
           type="text"
           id="judul"
           name="judul"
-          
           defaultValue={book.judul}
           required
         />
