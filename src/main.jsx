@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import Library from "./pages/Library";
 import DetailPage from "./pages/DetailPage";
 import AddPage from "./pages/addBook";
-import UpdatePage from "./pages/UppPage";
+import UppPage from "./pages/UppPage";
 
 
 const router = createBrowserRouter([
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/library/update/:id",
-    element: <UpdatePage/>
+    element: <UppPage/>
   },
   {
     path: "*",

@@ -1,20 +1,20 @@
 import axios from "axios";
 // get
 export async function getData(callback) {
-  const res = await axios.get("http://api.buydiamond.my.id/list");
+  const res = await axios.get("https://api.buydiamond.my.id/list");
   const data = res.data;
   callback(data);
 }
 // get find
 export async function findData(id,callback) {
-  const res = await axios.get(`http://api.buydiamond.my.id/list/${id}`);
+  const res = await axios.get(`https://api.buydiamond.my.id/list/${id}`);
   const data = res.data
   callback(data);
 }
 // post
 export function postData(data, callback) {
   axios
-    .post("http://api.buydiamond.my.id/list", {
+    .post("https://api.buydiamond.my.id/list", {
       judul: data.judul,
       genre: data.genre,
       penulis: data.penulis,
@@ -25,7 +25,7 @@ export function postData(data, callback) {
 // put
 export function putData(data, callback) {
   axios
-    .put("http://api.buydiamond.my.id/list", {
+    .put("https://api.buydiamond.my.id/list", {
       id: data.id,
       judul: data.judul,
       genre: data.genre,
@@ -38,7 +38,7 @@ export function putData(data, callback) {
 // delete
 export function delData(id, callback) {
   axios
-    .delete("http://api.buydiamond.my.id/list", {
+    .delete("https://api.buydiamond.my.id/list", {
       data: {
         id: id,
       },
